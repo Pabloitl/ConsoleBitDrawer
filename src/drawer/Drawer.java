@@ -1,13 +1,33 @@
 package drawer;
 
-import java.io.File;
+import java.io.FileNotFoundException;
+import read.DrawReader;
+import read.HexTransformer;
 
 public class Drawer {
-    public static final int BITS = 32;
+    private DrawReader repr;
 
-    private File repr;
-
-    public Drawer (String file) {
-        repr = new File(file);
+    public Drawer () {
+        
+    }
+    
+    public Drawer (String file) throws FileNotFoundException {
+        setFile(file);
+    }
+    
+    public void setFile(String file) throws FileNotFoundException {
+        repr = new DrawReader(file);
+    }
+    
+    public void print() throws Exception {
+        String line;
+        
+        try {
+            while ((line = repr.readLine()) != null) {
+                System.out.println(HexTransformer.toBox(line));
+            }
+        } finally {
+            repr.close();
+        }
     }
 }

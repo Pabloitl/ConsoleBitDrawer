@@ -1,5 +1,5 @@
 package read;
 
-public interface DrawingReader {
+public interface DrawingReadable {
    public String readLine() throws Exception;
 }

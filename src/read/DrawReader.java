@@ -7,9 +7,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class DrawReader implements DrawingReader, Closeable {
+public class DrawReader implements DrawingReadable, Closeable {
     private BufferedReader reader;
 
+    public DrawReader(String in) throws FileNotFoundException {
+        this(new File(in));
+    }
+    
     public DrawReader(File in) throws FileNotFoundException {
         reader = new BufferedReader(new FileReader(in));
     }
