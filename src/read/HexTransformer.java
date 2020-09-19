@@ -26,6 +26,7 @@ public class HexTransformer {
         for (int i = Integer.SIZE - 1; i >= 0; i--) {
             if ((bin & 1 << i) != 0)
                 result += "█";
+            else result += " ";
         }
         return result;
     }
