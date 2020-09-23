@@ -4,14 +4,10 @@ import java.io.FileNotFoundException;
 import read.DrawReader;
 import read.HexTransformer;
 
-public class Drawer {
-    private DrawReader repr;
-
-    public Drawer () {
-        
-    }
+public class ConsoleDrawer {
+    protected DrawReader repr;
     
-    public Drawer (String file) throws FileNotFoundException {
+    public ConsoleDrawer (String file) throws FileNotFoundException {
         setFile(file);
     }
     
@@ -29,5 +25,5 @@ public class Drawer {
         } finally {
             repr.close();
         }
-    }
+    };
 }

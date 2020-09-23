@@ -1,10 +1,10 @@
 package run;
 
-import drawer.Drawer;
+import drawer.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Drawer bitImage = new Drawer("assets/right.txt");
+        GUIDrawer bitImage = new GUIDrawer("assets/down.txt");
         
         bitImage.print();
     }
